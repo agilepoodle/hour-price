@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<title>Money wasted</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+<script >
+$(function(){
+  $("#price").hide();
+   // jQuery methods go here...
+  $("#count").click(function() { $("#price").show() });
+}); 
+</script>
+
+<div class="container">
+	<span class="people"><input type="text" placeholder="&#35; of people" /></span>
+	<span class="hour-price"><input type="text" placeholder="&euro; per hour" /></span>
+	<span class="button"><input type="button" id="count" value="Count"/></span>
+</div>
+
+<p class="price" id="price">MOAR MONEY</p>		
+
+</body>
+
+</html> 

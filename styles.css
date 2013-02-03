@@ -1,0 +1,64 @@
+body{
+	font-family: Verdana, sans-serif;
+}
+
+span {
+	margin: 5px;
+}
+
+.container {
+	position:relative;
+	top:20px;
+}
+
+.people {
+	padding: 1em;	
+	border: solid 1px grey;
+}
+
+.hour-price {
+	padding: 1em;	
+	border: solid 1px grey;
+}
+
+.price {
+	font-size: 5em;
+}
+
+input {
+	border: 2px;
+	outline: none;
+	font-weight: 700;
+	font-size: 1.25em;
+}
+
+input[type=button] {
+	padding: 0.7em;
+}
+
+@media screen and (max-width:480px)
+{
+	.people {
+		float: left;
+	}
+
+	.hour-price {
+		float: left;
+	}
+
+	.button {
+		float: none;
+	}
+}
+
+
+@media screen and (max-width:128px)
+{
+	.people {
+		float: none;
+	}
+
+	.hour-price {
+		float: none;
+	}
+}

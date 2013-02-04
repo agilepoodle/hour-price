@@ -29,6 +29,12 @@ p {
 	font-size: 5em;
 }
 
+.teaser {
+	font-size: 4em;
+	color: grey;
+	font-style: italic;;
+}
+
 input {
 	border: 2px;
 	outline: none;

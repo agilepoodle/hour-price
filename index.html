@@ -8,43 +8,53 @@
 
 <body>
 
-<script >
-$(document).ready(function(){
-	$("#price-details").hide();
-	$("#count").click(function() {
-		costPerSecond = parseInt($("#cost-per-hour").val()) / 3600;
-		recursivePriceCalculation();
-		$("#price-details").show();
-		$("#input-container").hide();
+	<script >
+	$(document).ready(function(){
+		$("#price-details").hide();
+		$("cost").hide();
+		$("#count").click(function() {
+			costPerSecond = parseInt($("#cost-per-hour").val()) / 3600;
+			recursivePriceCalculation();
+			$("#price-details").show();
+			$("#input-container").hide();
+		});
 	});
-});
 
-var total = 0;
-var costPerSecond = 0;
+	var total = 0;
+	var costPerSecond = 0;
 
-function recursivePriceCalculation(){
- 	total += parseInt($("#amount-of-people").val()) * costPerSecond;
- 	$("#running-price").text(roundNumber(total, 2));
-    setTimeout(arguments.callee, 1000);
-};
+	function recursivePriceCalculation(){
+	 	total += parseInt($("#amount-of-people").val()) * costPerSecond;
+	 	$("#running-price").text(roundNumber(total, 2));
+	    setTimeout(arguments.callee, 1000);
+	};
 
-function roundNumber(number, digits) {
-	var multiple = Math.pow(10, digits);
-    var rndedNum = Math.round(number * multiple) / multiple;
-    return rndedNum;
-}
+	function roundNumber(number, digits) {
+		var multiple = Math.pow(10, digits);
+	    var rndedNum = Math.round(number * multiple) / multiple;
+	    return rndedNum;
+	}
 
-</script>
+	</script>
 
-<div class="container" id="input-container">
-	<span class="people"><input id="amount-of-people" type="text" placeholder="&#35; of people" /></span>
-	<span class="hour-price"><input id="cost-per-hour" type="text" placeholder="&euro; per hour" /></span>
-	<span><input type="button" id="count" value="Count"/></span>
-</div>
+	<div class="container" id="input-container">
+		<form>
+			<span class="people"><input id="amount-of-people" type="text" placeholder="&#35; of people" /></span>
+			<span class="hour-price"><input id="cost-per-hour" type="text" placeholder="&euro; per hour" /></span>
+			<span><input type="button" id="count" value="Count"/></span>
+		</form>
+	</div>
 
-<div id="price-details">
-	<span class="teaser">Time is money: </span><span class="price" id="running-price">0.0</span><span class="price">&euro;</span>
-</div>
+	<div id="price-details">
+		<div class="center">
+			<span class="teaser">time is money</span>
+		</div>
+
+		<div class="center">
+			<span class="price" id="running-price">0.0</span>
+			<span class="price">&euro;</span>
+		</div>
+	</div>
 
 </body>
 
